@@ -13,6 +13,8 @@
 		00CD43911B07025F00881914 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00CD43901B07025F00881914 /* Images.xcassets */; };
 		00CD43941B07025F00881914 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00CD43921B07025F00881914 /* LaunchScreen.xib */; };
 		00CD43A01B07025F00881914 /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD439F1B07025F00881914 /* CodeCoverageTests.swift */; };
+		00CD43AA1B07029400881914 /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CD43A91B07029400881914 /* SwiftModel.swift */; };
+		00CD43AE1B0705A100881914 /* ObjcModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CD43AD1B0705A100881914 /* ObjcModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,10 @@
 		00CD43991B07025F00881914 /* CodeCoverageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CD439E1B07025F00881914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CD439F1B07025F00881914 /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
+		00CD43A91B07029400881914 /* SwiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
+		00CD43AB1B0705A000881914 /* CodeCoverage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeCoverage-Bridging-Header.h"; sourceTree = "<group>"; };
+		00CD43AC1B0705A100881914 /* ObjcModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcModel.h; sourceTree = "<group>"; };
+		00CD43AD1B0705A100881914 /* ObjcModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +85,14 @@
 			children = (
 				00CD43891B07025F00881914 /* AppDelegate.swift */,
 				00CD438B1B07025F00881914 /* ViewController.swift */,
+				00CD43A91B07029400881914 /* SwiftModel.swift */,
+				00CD43AC1B0705A100881914 /* ObjcModel.h */,
+				00CD43AD1B0705A100881914 /* ObjcModel.m */,
 				00CD438D1B07025F00881914 /* Main.storyboard */,
 				00CD43901B07025F00881914 /* Images.xcassets */,
 				00CD43921B07025F00881914 /* LaunchScreen.xib */,
 				00CD43871B07025F00881914 /* Supporting Files */,
+				00CD43AB1B0705A000881914 /* CodeCoverage-Bridging-Header.h */,
 			);
 			path = CodeCoverage;
 			sourceTree = "<group>";
@@ -213,6 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CD438C1B07025F00881914 /* ViewController.swift in Sources */,
+				00CD43AE1B0705A100881914 /* ObjcModel.m in Sources */,
+				00CD43AA1B07029400881914 /* SwiftModel.swift in Sources */,
 				00CD438A1B07025F00881914 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,9 +352,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CodeCoverage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +365,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CodeCoverage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -371,6 +388,7 @@
 				INFOPLIST_FILE = CodeCoverageTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCoverage.app/CodeCoverage";
 			};
 			name = Debug;
@@ -386,9 +404,89 @@
 				INFOPLIST_FILE = CodeCoverageTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCoverage.app/CodeCoverage";
 			};
 			name = Release;
+		};
+		00CD43AF1B07068500881914 /* GCov_Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = GCov_Build;
+		};
+		00CD43B01B07068500881914 /* GCov_Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				INFOPLIST_FILE = CodeCoverage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = GCov_Build;
+		};
+		00CD43B11B07068500881914 /* GCov_Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CodeCoverageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverage/CodeCoverage-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCoverage.app/CodeCoverage";
+			};
+			name = GCov_Build;
 		};
 /* End XCBuildConfiguration section */
 
@@ -397,6 +495,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00CD43A11B07025F00881914 /* Debug */,
+				00CD43AF1B07068500881914 /* GCov_Build */,
 				00CD43A21B07025F00881914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -406,6 +505,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00CD43A41B07025F00881914 /* Debug */,
+				00CD43B01B07068500881914 /* GCov_Build */,
 				00CD43A51B07025F00881914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -414,6 +514,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00CD43A71B07025F00881914 /* Debug */,
+				00CD43B11B07068500881914 /* GCov_Build */,
 				00CD43A81B07025F00881914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

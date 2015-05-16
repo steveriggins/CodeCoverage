@@ -23,7 +23,8 @@ class CodeCoverageTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        let model = ObjcModel()
+        XCTAssert(model.simpleBool(), "Should be true")
     }
     
     func testPerformanceExample() {
